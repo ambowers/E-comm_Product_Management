@@ -25,6 +25,15 @@ if (slectedProduct.stock){
     stockStatusElement.textContent= "Out of Stock";
     stockStatusElement.style.color='red';
     purchaseButton.disabled = true;
+    }
 }
+colorSelector.addEventListener('change', updateProductDetials);
+updateProductDetials();
 
-}
+purchaseButton.addEventListener('click',()=>   {
+    if (productOptions.stock){
+        alert(`Thank you for purchasing ${selectedColor} Designer iPhone Case (iPhone 15)`)
+    } else {
+        alert(`We are sorry, currently ${selectedColor} is out of stock.`)
+    }    
+})
